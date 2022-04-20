@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('precios', function (Blueprint $table) {
             $table->id();
+            $table->string('type', 255)->unique();
+            $table->double('cost', 8, 2);
+            $table->boolean('active');
             $table->timestamps();
         });
     }

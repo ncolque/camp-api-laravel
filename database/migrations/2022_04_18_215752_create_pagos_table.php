@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('pagos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('alumno_id');
+            $table->foreignId('precio_id');
             $table->timestamps();
         });
     }
