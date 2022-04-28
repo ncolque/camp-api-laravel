@@ -19,8 +19,8 @@ class AlumnoController extends Controller
     {
         $alumnos = Alumno::all();
         return response()->json([
+            'message' => 'Listado de todos los alumnos',
             'data' => $alumnos,
-            'status' => Response::HTTP_OK
         ], Response::HTTP_OK);
     }
 
@@ -36,7 +36,6 @@ class AlumnoController extends Controller
         return response()->json([
             'message' => 'El alumno ha sido creado correctamente',
             'data' => $alumno,
-            'status' => Response::HTTP_CREATED,
         ], Response::HTTP_CREATED);
     }
 
@@ -50,9 +49,8 @@ class AlumnoController extends Controller
     {
         $empresa = Empresa::findOrFail($alumno->empresa_id);
         return response()->json([
+            'message' => 'Alumno mostrado correctamente',
             'data' => $alumno,
-            'empresa' => $empresa,
-            'status' => Response::HTTP_OK,
         ], Response::HTTP_OK);
     }
 
@@ -69,7 +67,6 @@ class AlumnoController extends Controller
         return response()->json([
             'message' => 'El alumno ha sido actualizado correctamente',
             'data' => $alumno,
-            'status' => Response::HTTP_OK,
         ], Response::HTTP_OK);
     }
 
@@ -85,7 +82,6 @@ class AlumnoController extends Controller
         return response()->json([
             'message' => 'El alumno ha sido eliminado correctamente',
             'data' => $alumno,
-            'status' => Response::HTTP_OK,
         ], Response::HTTP_OK);
     }
 }

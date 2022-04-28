@@ -18,8 +18,8 @@ class PrecioController extends Controller
     {
         $precios = Precio::all();
         return response()->json([
+            'message' => 'Listado de todos los precios',
             'data' => $precios,
-            'status' => Response::HTTP_OK
         ], Response::HTTP_OK);
     }
 
@@ -35,7 +35,6 @@ class PrecioController extends Controller
         return response()->json([
             'message' => 'El precio ha sido creado correctamente',
             'data' => $precio,
-            'status' => Response::HTTP_CREATED,
         ], Response::HTTP_CREATED);
     }
 
@@ -48,8 +47,8 @@ class PrecioController extends Controller
     public function show(Precio $precio)
     {
         return response()->json([
+            'message' => 'Precio mostrado correctamente',
             'data' => $precio,
-            'status' => Response::HTTP_OK,
         ], Response::HTTP_OK);
     }
 
@@ -66,7 +65,6 @@ class PrecioController extends Controller
         return response()->json([
             'message' => 'El precio ha sido actualizado correctamente',
             'data' => $precio,
-            'status' => Response::HTTP_OK,
         ], Response::HTTP_OK);
     }
 
@@ -82,7 +80,6 @@ class PrecioController extends Controller
         return response()->json([
             'message' => 'El precio ha sido eliminado correctamente',
             'data' => $precio,
-            'status' => Response::HTTP_OK,
         ], Response::HTTP_OK);
     }
 }

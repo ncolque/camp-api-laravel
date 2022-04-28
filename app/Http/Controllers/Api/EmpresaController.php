@@ -18,8 +18,8 @@ class EmpresaController extends Controller
     {
         $empresas = Empresa::all();
         return response()->json([
+            'message' => 'Listado de todas las empresas',
             'data' => $empresas,
-            'status' => Response::HTTP_OK
         ], Response::HTTP_OK);
     }
 
@@ -45,7 +45,6 @@ class EmpresaController extends Controller
         return response()->json([
             'message' => 'La empresa ha sido creado correctamente',
             'data' => $empresa,
-            'status' => Response::HTTP_CREATED,
         ], Response::HTTP_CREATED);
     }
 
@@ -60,7 +59,6 @@ class EmpresaController extends Controller
         return response()->json([
             'message' => 'Empresa mostrado correctamente',
             'data' => $empresa,
-            'status' => Response::HTTP_OK,
         ], Response::HTTP_OK);
     }
 
@@ -81,7 +79,6 @@ class EmpresaController extends Controller
         return response()->json([
             'message' => 'La empresa ha sido actualizado correctamente',
             'data' => $empresa,
-            'status' => Response::HTTP_OK,
         ], Response::HTTP_OK);
     }
 
@@ -97,7 +94,6 @@ class EmpresaController extends Controller
         return response()->json([
             'message' => 'La empresa ha sido eliminado correctamente',
             'data' => $empresa,
-            'status' => Response::HTTP_OK,
         ], Response::HTTP_OK);
     }
 }

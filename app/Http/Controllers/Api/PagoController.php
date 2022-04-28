@@ -18,8 +18,8 @@ class PagoController extends Controller
     {
         $pagos = Pago::all();
         return response()->json([
+            'message' => 'Listado de todos los tipos de pago',
             'data' => $pagos,
-            'status' => Response::HTTP_OK
         ], Response::HTTP_OK);
     }
 
@@ -35,7 +35,6 @@ class PagoController extends Controller
         return response()->json([
             'message' => 'El pago ha sido creado correctamente',
             'data' => $pago,
-            'status' => Response::HTTP_CREATED,
         ], Response::HTTP_CREATED);
     }
 
@@ -48,8 +47,8 @@ class PagoController extends Controller
     public function show(Pago $pago)
     {
         return response()->json([
+            'message' => 'Pago mostrado correctamente',
             'data' => $pago,
-            'status' => Response::HTTP_OK,
         ], Response::HTTP_OK);
     }
 
@@ -66,7 +65,6 @@ class PagoController extends Controller
         return response()->json([
             'message' => 'El pago ha sido actualizado correctamente',
             'data' => $pago,
-            'status' => Response::HTTP_OK,
         ], Response::HTTP_OK);
     }
 
@@ -82,7 +80,6 @@ class PagoController extends Controller
         return response()->json([
             'message' => 'El pago ha sido eliminado correctamente',
             'data' => $pago,
-            'status' => Response::HTTP_OK,
         ], Response::HTTP_OK);
     }
 }
