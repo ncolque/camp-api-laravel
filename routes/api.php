@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AlumnoController;
 use App\Http\Controllers\Api\EmpresaController;
 use App\Http\Controllers\Api\PagoController;
 use App\Http\Controllers\Api\PrecioController;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('register',  [UserController::class, 'register']);
 Route::post('login', [UserController::class, 'login']);
-Route::middleware(['auth:api'])->group(function () {
+Route::middleware(['auth:sanctum'])->group(function () {
     Route::apiResource('/precios', PrecioController::class);
     Route::apiResource('/empresas', EmpresaController::class);
     Route::apiResource('/alumnos', AlumnoController::class);
